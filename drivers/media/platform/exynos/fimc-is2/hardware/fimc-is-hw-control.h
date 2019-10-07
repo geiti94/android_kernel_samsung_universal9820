@@ -388,6 +388,7 @@ struct fimc_is_hardware {
 	atomic_t			log_count;
 
 	bool				video_mode;
+	bool				hs_mode;
 	/* fast read out in hardware */
 	bool				hw_fro_en;
 	unsigned long			hw_recovery_flag;

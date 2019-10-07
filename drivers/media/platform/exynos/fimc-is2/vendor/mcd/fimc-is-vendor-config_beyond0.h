@@ -1,24 +1,15 @@
-#ifndef FIMC_IS_VENDOR_CONFIG_DNS_V02_H
-#define FIMC_IS_VENDOR_CONFIG_DNS_V02_H
+#ifndef FIMC_IS_VENDOR_CONFIG_BEYOND0_H
+#define FIMC_IS_VENDOR_CONFIG_BEYOND0_H
 
-#include "fimc-is-eeprom-rear-2l4_v012.h"
-#include "fimc-is-eeprom-front-3j1_v006.h"
+#include "fimc-is-eeprom-rear-2l4_v010.h"
+#include "fimc-is-eeprom-front-3j1_v004.h"
 
 #define VENDER_PATH
 
 #define CAMERA_REAR_DUAL_CAL
 #define CAMERA_REAR2
-#define CAMERA_REAR2_AF /* related to OIS */
 #define CAMERA_REAR2_TILT
 #define CAMERA_REAR2_MODULEID
-#define CAMERA_REAR3
-#define CAMERA_REAR3_AFCAL
-#define CAMERA_REAR3_TILT
-#define CAMERA_REAR_TOF
-#define CAMERA_REAR_TOF_CAL
-#define CAMERA_REAR4_TOF_MODULEID  	/* rear tof moduleid */
-#define CAMERA_REAR_TOF_TILT	/* wide - tof */
-#define CAMERA_REAR2_TOF_TILT	/* ultrawide - tof tilt */
 
 #define CAMERA_USE_OIS_VDD_1_8V
 
@@ -30,21 +21,12 @@
 
 #define CAMERA_OIS_GYRO_OFFSET_SPEC 10000
 
-#define CAMERA_REAR2_SENSOR_SHIFT_CROP
-#define FIXED_SENSOR_CROP_SHIFT_NUM	5
-
-#define CAMERA_2ND_OIS
-
-#define USE_FLIP_WIDE_SENSOR
-
 #define RTA_CODE_AREA_SIZE (0x00180000)
 
 #define USE_CAMERA_EMBEDDED_HEADER
 
 #define USE_CAMERA_MIPI_CLOCK_VARIATION
 #ifdef USE_CAMERA_MIPI_CLOCK_VARIATION
-#define USE_CAMERA_REAR_TOF_TX_FREQ_VARIATION_SYSFS_ENABLE
-/*#define USE_CAMERA_REAR_TOF_TX_FREQ_VARIATION*/
 /*#define USE_CAMERA_MIPI_CLOCK_VARIATION_RUNTIME*/
 #endif
 
@@ -53,8 +35,6 @@
 #ifndef CONFIG_SEC_FACTORY
 #define USE_CAMERA_PREPARE_RETENTION_ON_BOOT
 #endif
-
-#define USE_CAMERA_CHECK_SENSOR_REV
 
 #define USE_CAMERA_HW_BIG_DATA
 
@@ -93,21 +73,6 @@
 #endif
 #endif
 
-#ifdef CAMERA_REAR_TOF
-#define REAR_TOF_ROM_ID ROM_ID_REAR3
-#define REAR_TOF_CHECK_MAP_VERSION '1'
-#define REAR_TOF_DEFAULT_UID 0xCD35
-#define REAR_TOF_CHECK_SENSOR_ID '1'  /* '1' => imx316*/
-#ifdef REAR_TOF_CHECK_SENSOR_ID
-#define REAR_TOF_IMX316_CRC_ADDR1_MAP002 0x11E3  /* imx316 eeprom cal map ver02 */
-#define REAR_TOF_IMX316_CRC_ADDR1_MAP001 0x11E1  /* imx316 eeprom cal map ver01 */
-#endif
-#endif
-
 #define USE_BUCK2_REGULATOR_CONTROL
-#define USE_TOF_IO_DENOISE_REAR_CAMERA_IO
-#define USE_SHARE_I2C_CLIENT_IMX516_IMX316
 
-#define LEDS_S2MPB02_ADAPTIVE_MOVIE_CURRENT 140
-
-#endif /* FIMC_IS_VENDOR_CONFIG_DNS_V02_H */
+#endif /* FIMC_IS_VENDOR_CONFIG_BEYOND0_H */
